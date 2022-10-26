@@ -21,12 +21,3 @@ async function connect() {
 
 module.exports = connect;
 
-async function Devices(){
-  const conn = await connect();
-  const [rows] = await conn.query('SELECT * FROM Devices;');
-  console.log(rows);
-  return rows;
-}
-
-module.exports = Devices;
-

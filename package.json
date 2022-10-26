@@ -3,5 +3,24 @@
     "express": "4.17",
     "mysql": "^2.18.1",
     "mysql2": "2.3"
-  }
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "name": "back-end",
+  "version": "1.0.0",
+  "main": "db.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wilquer82/EldoradoTest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wilquer82/EldoradoTest/issues"
+  },
+  "homepage": "https://github.com/Wilquer82/EldoradoTest#readme",
+  "description": ""
 }

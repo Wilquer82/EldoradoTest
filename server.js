@@ -5,7 +5,8 @@ const express = require('express');
 const app = express();
 
 app.use(express.json());
-const port = 3001;
+const port = process.env.PORT || 3001;
+
 
 app.listen(port, async () => {
   console.log(`Servidor Rodando em ${port}`);
@@ -13,4 +14,4 @@ app.listen(port, async () => {
 });
 
 connect();
-Devices();
+// Devices();
