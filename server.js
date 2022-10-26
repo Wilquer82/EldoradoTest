@@ -1,6 +1,7 @@
 const connect = require('./controllers/db');
 const express = require('express');
 const { GetAllDevices, AddDevice, DeleteDevice } = require('./controllers/devices');
+const { GetCategories, DeleteCategory, AddCategory } = require('./controllers/categories');
 // const { app } = require('express');
 
 connect();
@@ -23,3 +24,12 @@ app.use('/addDevices', AddDevice);
 
 app.delete('/delDevice', DeleteDevice);
 app.use('/delDevice', DeleteDevice);
+
+app.get('/', GetCategories);
+app.use('/categories', GetCategories);
+
+app.post('/addCategory', AddCategory);
+app.use('/addCategory', AddCategory);
+
+app.delete('/delCategory', DeleteCategory);
+app.use('/delCategory', DeleteCategory);
