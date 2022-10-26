@@ -1,5 +1,5 @@
 
-const conn = require('../db/connect');
+const conn = require('./db');
 
 
 async function GetAllCategories() {
