@@ -1,0 +1,27 @@
+*{
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+div{
+  display: flex;
+  justify-content: space-around;
+  width: 80vw;
+  background-color: silver;
+  height: 2.5rem;
+  margin: 1rem auto;
+  padding: 1rem 1rem;
+}
+
+table {
+  width: 82.1vw;
+  background-color: gray;
+  margin: 1rem auto;
+  padding: 1rem 1rem;
+  text-align: center;
+  border: 1px black groove ;
+}
+
+tr:hover{
+  background-color: darkgrey;
+}

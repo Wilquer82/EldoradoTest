@@ -1,0 +1,36 @@
+<div>
+<mat-form-field appearance="fill">
+  <mat-label>Selecione a Categoria</mat-label>
+  <mat-select class="form-control" type="number" [(ngModel)]="CategoryId" (ngModelChange)="GetWithId()" name="SCategory">
+    <mat-option>--</mat-option>
+    <mat-option *ngFor="let category of categories" [value]="category.Id">
+      {{category.Category}}
+    </mat-option>
+  </mat-select>
+</mat-form-field><button mat-raised-button color="primary">Adicionar Dispositivo</button>
+</div>
+
+    <table class="table">
+      <thead>
+        <tr class="line">
+          <th colspan="2">Id</th>
+          <th colspan="2">Color</th>
+          <th colspan="2">PartNumber</th>
+          <th colspan="1"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="line" *ngFor="let device of itens">
+          <td colspan="2">{{ device.Id }}</td>
+          <td colspan="2">{{ device.Color }}</td>
+          <td colspan="2">{{ device.PartNumber }}</td>
+          <td colspan="1">
+            <button mat-flat-button color="warn" (click)="deleteItem(device.Id)">
+              Excluir
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+

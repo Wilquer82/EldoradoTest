@@ -3,12 +3,11 @@
   padding: 0 auto;
 }
 
-header {
+div{
   display: flex;
   justify-content: space-around;
-  /* flex-direction: column; */
   width: 80vw;
-  background-color: blue;
+  background-color: green;
   height: 2rem;
   padding: 1rem 1rem;
 }
