@@ -10,16 +10,19 @@ async function GetAllDevices(_req, res) {
     }
   }
 
-  async function GetDevices(req, res) {
-    const conn = await connect();
-    const { Id } = req.params;
-  console.log(Id);
+async function GetDevices(req, res) {
+  const conn = await connect();
+  const { Id } = req.params;
+  
     try {
+    
       const [rows] = await conn.query(`SELECT * FROM Devices WHERE CategoryId = ${Id}`);
       return res.status(200).json(rows);
+  
     } catch (error) {
       throw error;
     }
+  
   }
 
 
