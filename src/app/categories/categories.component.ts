@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { ApiserviceService } from '../apiservice.service';
 
-
-interface Animal {
-  name: string;
-  sound: string;
+export interface Categories{
+  Id: number;
+  Category: string;
 }
 
 @Component({
@@ -12,23 +12,31 @@ interface Animal {
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.css']
 })
-export class CategoriesComponent implements OnInit {
-  animalControl = new FormControl<Animal | null>(null, Validators.required);
-  selectFormControl = new FormControl('', Validators.required);
-  animals: Animal[] = [
-    {name: 'Dog', sound: 'Woof!'},
-    {name: 'Cat', sound: 'Meow!'},
-    {name: 'Cow', sound: 'Moo!'},
-    {name: 'Fox', sound: 'Wa-pa-pa-pa-pa-pa-pow!'},
-  ];
-  constructor() { }
+export class Categories implements OnInit {
+
+  CategoryId: any;
+  ShowTable: boolean = false;
+
+
+  constructor(private service: ApiserviceService) { }
+
+  Categories: any;
+
+
+  Table() {
+    this.ShowTable = true;
+  }
+
+  deleteItem(DeviceId: any) {
+    this.service.showConfirm('Confirmação de Exclusão', 'Are you sure you want to delete?')
+  }
 
   ngOnInit(): void {
-
+    this.service.getAl1Categories().subscribe((res) => {
+      this.Categories = res;
+      console.log(this.Categories);
+    })
   }
 
 }
 
-export class SelectMultipleExample {
-
-}

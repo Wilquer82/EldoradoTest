@@ -1,7 +1,5 @@
 <header>
-  <button mat-raised-button color="primary">Dispositivo Gestão</button>
-  <button mat-raised-button color="primary">Gerenciamento de Categoria</button>
+  <a routerLink="/devices" mat-raised-button color="primary" (click)="DevicesComponent()">Dispositivo Gestão</a>
+  <a routerLink="/categories" mat-raised-button color="primary" (click)="CategoriesComponent()">Gerenciamento de Categoria</a>
 </header>
-<app-devices></app-devices>
-<app-categories></app-categories>
 <router-outlet></router-outlet>

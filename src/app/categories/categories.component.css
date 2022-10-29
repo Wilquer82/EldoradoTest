@@ -5,9 +5,18 @@
 
 div{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  width: 100vw;
+  align-items: center;
+  /* height: 5rem; */
+  padding: 40px 0;
+}
+
+table {
   width: 80vw;
-  background-color: green;
-  height: 2rem;
-  padding: 1rem 1rem;
+  text-align: center;
+}
+
+.line:hover{
+  background-color: darkgrey;
 }

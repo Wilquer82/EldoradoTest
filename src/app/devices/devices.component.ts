@@ -2,18 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ApiserviceService } from '../apiservice.service';
 
 
-// interface Category {
-//   Category: string;
-//   Id: number;
-// }
-
-// export interface PeriodicElement {
-//   name: string;
-//   position: number;
-//   weight: number;
-//   symbol: string;
-// }
-
 export interface Devices{
   Id: number;
   Color: string;
@@ -26,11 +14,11 @@ export interface Devices{
   templateUrl: './devices.component.html',
   styleUrls: ['./devices.component.css']
 })
-export class DevicesComponent implements OnInit {
+export class Devices implements OnInit {
 
   CategoryId: any;
   DeviceId: any;
-
+  isSelected: boolean = false;
 
   constructor(private service: ApiserviceService) { }
 
@@ -42,13 +30,12 @@ export class DevicesComponent implements OnInit {
     this.service.getDevicesWithCategories(this.CategoryId).subscribe((res) => {
       this.itens = res;
       console.log(res);
+      this.isSelected = true;
     });
   }
 
   deleteItem(DeviceId: any) {
-    // this.service.deleteDevice(DeviceId).subscribe((res) => {
-    //   console.log(res);
-    // }
+    this.service.showConfirm('Confirmação de Exclusão', 'Are you sure you want to delete?')
   }
 
   ngOnInit(): void {

@@ -1,14 +1,24 @@
-*{
+* {
   margin: 0 auto;
   padding: 0 auto;
 }
 
+a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  height: 2.5rem;
+}
+
+a:hover {
+  background-color: palevioletred;
+}
 header {
   display: flex;
   justify-content: space-around;
-  /* flex-direction: column; */
-  width: 80vw;
-  background-color: blue;
-  height: 2rem;
-  padding: 1rem 1rem;
+  align-items: center;
+  width: 100vw;
+  background-color: cornflowerblue;
+  height: 5rem;
 }
