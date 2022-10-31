@@ -20,3 +20,64 @@ table {
 .line:hover{
   background-color: darkgrey;
 }
+
+
+.modal-content{
+  display: flex;
+  justify-content: center;
+  width: 60vw;
+  box-sizing: border-box;
+  height: 40vh;
+  border: 1px gray groove;
+}
+
+.modal-footer{
+  display: flex;
+  justify-content: space-around;
+  width: 60vw;
+}
+
+.devices{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100vw;
+  /* height: 5rem; */
+  /* margin: 1rem auto; */
+  padding: 13px 0;
+}
+
+table {
+  width: 80vw;
+  text-align: center;
+}
+
+.line:hover{
+  background-color: darkgrey;
+}
+
+.add{
+  padding: 2rem 0;
+  margin-top: 4rem;
+  width: 50vw;
+  height: 52vh;
+  border-radius: 20px;
+  border: 1px groove gray;
+}
+
+label{
+  width: 50%;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.division{
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.form-group{
+  width: 100%;
+}

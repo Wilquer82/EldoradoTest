@@ -7,26 +7,45 @@ import { ConfirmModalComponent } from './confirm-modal/confirm-modal.component';
 @Injectable({
   providedIn: 'root'
 })
-export class ApiserviceService {
 
+export class ApiserviceService {
   constructor(
     private _http: HttpClient,
     private modalService: BsModalService,
   ) { }
+
   apiUrl = 'http://localhost:3001';
 
-  getAl1Categories():Observable<any>
-  {
+  AddDevice(Device: any) {
+    return this._http.post(`${this.apiUrl + "/addDevice"}`, Device);
+  }
+
+  Addcategory(Category: any) {
+    return this._http.post(`${this.apiUrl + "/addCategory"}`, Category);
+  }
+
+  getAl1Categories():Observable<any>{
     return this._http.get(`${this.apiUrl+"/categories"}`);
   }
+
   getDevicesWithCategories(id: number): Observable<any>{
     return this._http.get(`${this.apiUrl+"/"+id}`);
   }
 
-  showConfirm(title: string, msg: string, confirmB?: string, cancelB?: string) {
+  deleteDevice(id: number): Observable<any>{
+    return this._http.delete(`${this.apiUrl + "/delDevice/" + id}`)
+  };
+
+  deleteCategory(id: number): Observable<any>{
+    return this._http.delete(`${this.apiUrl + "/delCategory/" + id}`)
+  };
+
+  showConfirm(Type: string, Id: number, title: string, msg: string, confirmB?: string, cancelB?: string) {
     const bsModalRef: BsModalRef = this.modalService.show(ConfirmModalComponent);
     bsModalRef.content.title = title;
     bsModalRef.content.msg = msg;
+    bsModalRef.content.Type = Type;
+    bsModalRef.content.Id = Id;
 
     if (confirmB) {
       bsModalRef.content.confirmB = confirmB;
@@ -35,4 +54,5 @@ export class ApiserviceService {
       bsModalRef.content.cancelB = cancelB;
     }
   }
+
 }

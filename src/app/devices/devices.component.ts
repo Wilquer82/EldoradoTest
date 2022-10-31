@@ -1,13 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BsModalRef } from 'ngx-bootstrap/modal';
 import { ApiserviceService } from '../apiservice.service';
-
-
-export interface Devices{
-  Id: number;
-  Color: string;
-  PartNumber: number;
-  Category: string;
-}
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-devices',
@@ -17,36 +11,62 @@ export interface Devices{
 export class Devices implements OnInit {
 
   CategoryId: any;
-  DeviceId: any;
-  isSelected: boolean = false;
+  ShowTable: boolean = false;
 
-  constructor(private service: ApiserviceService) { }
+
+  constructor(
+    private service: ApiserviceService,
+    public BsModalRef: BsModalRef) { }
 
   itens: any;
   categories: any;
+  AddDevice: boolean = false;
 
   GetWithId() {
-    console.log(this.CategoryId)
     this.service.getDevicesWithCategories(this.CategoryId).subscribe((res) => {
       this.itens = res;
-      console.log(res);
-      this.isSelected = true;
+      this.ShowTable = true;
+      this.AddDevice = false;
     });
   }
 
-  deleteItem(DeviceId: any) {
-    this.service.showConfirm('Confirmação de Exclusão', 'Are you sure you want to delete?')
+  deleteItem(Id: any) {
+    this.service.showConfirm('Device', Id, 'Confirmação de Exclusão', `Você confima a exclusão do Dispositivo Id ${Id} ?`)
+    this.ShowTable = false;
+  }
+
+  addItem() {
+    this.AddDevice = true;
+    this.ShowTable = false;
+  }
+
+  onClose() {
+    this.AddDevice = false;
   }
 
   ngOnInit(): void {
     this.service.getAl1Categories().subscribe((res) => {
       this.categories = res;
-      console.log(this.categories);
     })
-    // console.log(this.CategoryId);
+  }
 
+  Device = new FormGroup({
+    'CategoryId': new FormControl('', Validators.required),
+    'Color': new FormControl('', Validators.required),
+    'PartNumber': new FormControl('', Validators.required),
+  });
 
+  Submit(Device: any) {
+      if (this.Device.valid){
+        this.service.AddDevice(Device.value).subscribe((res) => {
+        })
 
+        this.Device.reset();
+        this.AddDevice = false;
+    }
+    else {
+      alert("Campos em Branco ou Incorretos! Corrija!")
+    }
   }
 
 }
