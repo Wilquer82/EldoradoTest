@@ -14,7 +14,9 @@ export class ApiserviceService {
     private modalService: BsModalService,
   ) { }
 
-  apiUrl = 'http://localhost:3001';
+  // apiUrl = 'http://localhost:3001';
+  // On AWS account
+  apiUrl = "http://ec2-54-167-212-139.compute-1.amazonaws.com:3001"
 
   AddDevice(Device: any) {
     return this._http.post(`${this.apiUrl + "/addDevice"}`, Device);
