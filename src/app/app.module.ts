@@ -12,28 +12,48 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApiserviceService } from './apiservice.service';
 import { ConfirmModalComponent } from './confirm-modal/confirm-modal.component';
 import { BsModalService } from 'ngx-bootstrap/modal';
-
+import { LoginComponent } from './login/login.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { OperationsComponent } from './operations/operations.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { AllOperationsComponent } from './all-operations/all-operations.component';
+import { TextMaskModule } from 'angular2-text-mask';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     Devices,
+    OperationsComponent,
     Categories,
     ConfirmModalComponent,
+    LoginComponent,
+    OperationsComponent,
+    AllOperationsComponent,
   ],
   imports: [
-  FormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    FormsModule,
     BrowserModule,
+    TextMaskModule,
     ReactiveFormsModule,
     HttpClientModule,
     MatButtonModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatCardModule,
+    MatIconModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSelectModule,
   ],
   entryComponents: [ConfirmModalComponent],
-  providers: [ApiserviceService, BrowserModule, BsModalService ],
-  bootstrap: [AppComponent]
+  providers: [ApiserviceService, BrowserModule, BsModalService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

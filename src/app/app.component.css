@@ -1,24 +1,41 @@
-* {
-  margin: 0 auto;
-  padding: 0 auto;
-}
-
 a {
   display: flex;
-  justify-content: center;
   align-items: center;
   text-decoration: none;
-  height: 2.5rem;
+  color: white;
+  margin-left: 1rem;
 }
 
-a:hover {
-  background-color: palevioletred;
+mat-icon{
+  font-size : 1.5rem !important ;
+  color: white;
+}
+
+tr{
+  padding: 0 auto;
+  display: flex;
+  width: 9rem;
+  align-items: center;
+  vertical-align: center;
+}
+
+td{
+  vertical-align: center;
+}
+
+
+
+tr:hover {
+  font-weight:bolder;
 }
 header {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 100vw;
+  width: 15rem;
   background-color: cornflowerblue;
-  height: 5rem;
+  height: 99vh;
+  position: fixed;
+  padding-top: 10vh;
 }

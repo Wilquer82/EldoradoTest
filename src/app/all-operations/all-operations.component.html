@@ -1,0 +1,34 @@
+<div class="main">
+  <h2 class="title">{{ operation }}</h2>
+  <form [formGroup]="Operation" (ngSubmit)="Submit(Operation)">
+    <div class="dateTime">
+      <label for="Valor">Valor:</label>
+      <input
+        placeholder="00,00"
+        type="number"
+        step="0.01"
+        min="0.01"
+        max="10000"
+        class="form-control amont"
+        formControlName="amont"
+        pattern="^\d+(\,\d{2})?$"
+      />
+    </div>
+    <div class="dateTime">
+      <label>Data/hora da transação:</label>
+
+      <input
+        type="datetime-local"
+        formControlName="date"
+        class="form-control date"
+      />
+    </div>
+
+    <div class="division">
+      <button type="button" class="btn btn-secondary" (click)="goBack()">
+        Cancelar
+      </button>
+      <button type="submit" class="btn btn-primary">Confirmar</button>
+    </div>
+  </form>
+</div>

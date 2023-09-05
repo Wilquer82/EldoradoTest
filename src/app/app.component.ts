@@ -10,10 +10,11 @@ import { Component } from '@angular/core';
 
 
 export class AppComponent {
-  title = 'EldoradoTest';
-
+  title = 'TechForb-Test';
+  showHeader= false;
   devices = false;
   categories = false;
+  operations = false;
 
   DevicesComponent(){
     this.devices = true;
@@ -21,5 +22,9 @@ export class AppComponent {
 
   CategoriesComponent(){
     this.categories = true;
+  }
+
+  OperationsComponent(){
+    this.operations = true;
   }
 }

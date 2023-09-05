@@ -1,0 +1,22 @@
+<div class="Login" style="display: flex; width: 99vw; height: 99vh; padding-top: .5rem">
+  <div style="padding-top: 40vh;text-align: center; width: 50%; height: 100vh; margin: 1rem"><h1>Bem Vindos</h1></div>
+  <form style="color: white; width: 50%; padding-top: 10rem; padding-left: 1rem; background-color: #353a61;" [formGroup]="Login" (ngSubmit)="Submit(Login)">
+    <div class="form-group">
+      <label for="Color" class="col-form-label">Tipo de Documento</label>
+      <input type="text" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" required style="width: 16rem;"
+        class="form-control" name="DocType" formControlName="DocType">
+    </div>
+    <div class="form-group">
+      <label for="DocNumber" class="col-form-label">Número do Documento</label>
+      <input type="text" required style="width: 16rem;" class="form-control" name="DocNumber"
+        formControlName="DocNum">
+    </div>
+    <div class="form-group">
+      <label for="Pass" class="col-form-label">Senha</label>
+      <input type="Password" required style="width: 16rem;" class="form-control" name="Pass" formControlName="Pass">
+      </div>
+    <div class="division">
+      <button type="submit" class="btn btn-primary">Entrar</button>
+    </div>
+  </form>
+</div>

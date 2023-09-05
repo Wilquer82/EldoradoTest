@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start": "nx serve",
+    "build": "nx build",
+    "watch": "nx build --watch --configuration development",
+    "test": "nx test"
   },
   "private": true,
   "dependencies": {
@@ -20,7 +20,14 @@
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
+    "@types/bootstrap": "^5.2.6",
+    "@types/chart.js": "^2.9.37",
+    "@types/jquery": "^3.5.18",
+    "@types/popper.js": "^1.11.0",
+    "@types/zone.js": "^0.5.12",
+    "angular2-text-mask": "^9.0.0",
     "bootstrap": "^4.6.2",
+    "chart.js": "^4.4.0",
     "jquery": "^3.3.1",
     "ngx-bootstrap": "^9.0.0",
     "popper.js": "^1.14.3",
@@ -30,8 +37,13 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.2.6",
+    "@angular-devkit/core": "~14.2.6",
+    "@angular-devkit/schematics": "~14.2.6",
     "@angular/cli": "~14.2.6",
     "@angular/compiler-cli": "^14.2.0",
+    "@nx/angular": "16.7.4",
+    "@nx/workspace": "16.7.4",
+    "@schematics/angular": "~14.2.6",
     "@types/jasmine": "~4.0.0",
     "jasmine-core": "~4.3.0",
     "karma": "~6.4.0",
@@ -39,6 +51,8 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "nx": "16.7.4",
+    "nx-cloud": "latest",
     "typescript": "~4.7.2"
   }
 }

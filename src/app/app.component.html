@@ -1,5 +1,46 @@
-<header>
-  <a routerLink="/devices" mat-raised-button color="primary" (click)="DevicesComponent()">Dispositivo Gestão</a>
-  <a routerLink="/categories" mat-raised-button color="primary" (click)="CategoriesComponent()">Gerenciamento de Categoria</a>
+<app-login *ngIf="!showHeader" (LoginValid)="showHeader = $event"></app-login>
+<header *ngIf="showHeader">
+  <tr>
+    <td><mat-icon>home</mat-icon></td>
+    <td><a routerLink="/categories" (click)="CategoriesComponent()">Inicio</a></td>
+  </tr>
+  <tr>
+    <td><mat-icon>credit_card</mat-icon></td>
+    <td>
+      <a routerLink="/categories" (click)="CategoriesComponent()"> Cartões</a>
+    </td>
+  </tr>
+  <tr>
+    <td><mat-icon>money</mat-icon></td>
+    <td>
+      <a routerLink="/devices" (click)="DevicesComponent()">Empréstimos</a>
+    </td>
+  </tr>
+  <tr>
+    <td><mat-icon>swap_horiz</mat-icon></td>
+    <td>
+      <a routerLink="/operations" (click)="OperationsComponent()"> Operações</a>
+    </td>
+  </tr>
+  <tr>
+    <td><mat-icon>security</mat-icon></td>
+    <td>
+      <a routerLink="/categories" (click)="CategoriesComponent()"> Seguros</a>
+    </td>
+  </tr>
+  <tr>
+    <td><mat-icon>help_outline</mat-icon></td>
+    <td>
+      <a routerLink="/categories" (click)="CategoriesComponent()"> Ajuda</a>
+    </td>
+  </tr>
+  <tr>
+    <td><mat-icon>exit_to_app</mat-icon></td>
+    <td>
+      <a routerLink="/categories" (click)="CategoriesComponent()">Encerrar Seção</a>
+    </td>
+  </tr>
 </header>
+
+
 <router-outlet></router-outlet>
