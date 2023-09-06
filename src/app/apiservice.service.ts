@@ -14,9 +14,9 @@ export class ApiserviceService {
     private modalService: BsModalService,
   ) { }
 
-  apiUrl = 'http://localhost:3001';
+  // apiUrl = 'http://localhost:3001';
 
-  // apiUrl = "https://ec2-44-210-0-1.compute-1.amazonaws.com:3001"
+  apiUrl = "https://techforbback.onrender.com";
 
   AddUser(User: any) {
     console.log("service", User)
