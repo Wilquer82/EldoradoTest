@@ -16,7 +16,7 @@ export class ApiserviceService {
 
   // apiUrl = 'http://localhost:3001';
 
-  apiUrl = "https://techforbback.onrender.com";
+  apiUrl = "https://tech-forb-back-ippqjwygb-wilquer82.vercel.app";
 
   AddUser(User: any) {
     console.log("service", User)
