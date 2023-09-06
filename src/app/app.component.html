@@ -1,5 +1,18 @@
-<app-login *ngIf="!showHeader" (LoginValid)="showHeader = $event"></app-login>
-<header *ngIf="showHeader">
+<app-login *ngIf="!showHeader" (LoginValid)="showHeader = $event;CategoriesComponent()"></app-login>
+<div *ngIf="showHeader">
+<div class="upper">
+  <div class="meioe">
+  <input class="search form-control" type="search" placeholder="Busca"/>
+  <mat-icon class="photo">search</mat-icon>
+  </div>
+  <div class="meiod">
+  <mat-icon class="photo">settings</mat-icon>
+  <mat-icon class="photo">notifications</mat-icon>
+  <div class="photo"></div>
+  <h4 class="User">{{user}}</h4>
+  </div>
+</div>
+<header >
   <tr>
     <td><mat-icon>home</mat-icon></td>
     <td><a routerLink="/categories" (click)="CategoriesComponent()">Inicio</a></td>
@@ -41,6 +54,6 @@
     </td>
   </tr>
 </header>
-
+</div>
 
 <router-outlet></router-outlet>

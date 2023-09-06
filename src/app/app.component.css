@@ -1,41 +1,91 @@
+*{
+  margin:0 auto;
+  padding: 0 auto;
+}
+
 a {
-  display: flex;
   align-items: center;
-  text-decoration: none;
-  color: white;
+  color: indigo;
+  display: flex;
   margin-left: 1rem;
+  text-decoration: none;
 }
 
 mat-icon{
   font-size : 1.5rem !important ;
-  color: white;
+  color: indigo;
+  border-radius: 1.5rem;
 }
 
 tr{
-  padding: 0 auto;
-  display: flex;
-  width: 9rem;
   align-items: center;
+  display: flex;
+  padding: 0 auto;
   vertical-align: center;
+  width: 9rem;
 }
 
 td{
   vertical-align: center;
 }
 
-
-
 tr:hover {
   font-weight:bolder;
 }
+
 header {
+  align-items: center;
+  background-color: whitesmoke;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  width: 15rem;
-  background-color: cornflowerblue;
   height: 99vh;
+  justify-content: space-evenly;
   position: fixed;
-  padding-top: 10vh;
+  width: 15rem;
+  z-index: 101;
+}
+
+.upper{
+  align-items: center;
+  background-color: #f5f4f4;
+  display: flex;
+  height: 8vh;
+  padding-left: 20vw;
+  width: 100vw;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 100;
+}
+
+.search{
+  border-radius: 1rem;
+}
+
+.User{
+  margin: 0 1rem;
+  padding: 0 auto;
+}
+
+.meioe{
+  display: flex;
+  width: 40vw;
+  align-items: center;
+  justify-content: center;
+}
+
+.meiod{
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.photo{
+  margin: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 2.5rem;
+  border: 1px solid black;
 }

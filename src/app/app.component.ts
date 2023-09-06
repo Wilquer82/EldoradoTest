@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 
 @Component({
@@ -11,10 +11,18 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'TechForb-Test';
-  showHeader= false;
+  showHeader = false;
   devices = false;
   categories = false;
   operations = false;
+  @Input() user: any;
+
+
+  ngOnInit(): void {
+    this.user = localStorage.getItem('user')
+    this.categories = true;
+  }
+
 
   DevicesComponent(){
     this.devices = true;

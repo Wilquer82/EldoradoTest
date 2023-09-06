@@ -1,27 +1,75 @@
-<div class="main">
-  <h2 class="title">{{ operation }}</h2>
+<div [ngClass]="operation != 'Transferência' && operation != 'PIX' ? 'main' : 'main2'">
   <form [formGroup]="Operation" (ngSubmit)="Submit(Operation)">
-    <div class="dateTime">
-      <label for="Valor">Valor:</label>
-      <input
-        placeholder="00,00"
-        type="number"
-        step="0.01"
-        min="0.01"
-        max="10000"
-        class="form-control amont"
-        formControlName="amont"
-        pattern="^\d+(\,\d{2})?$"
-      />
-    </div>
-    <div class="dateTime">
-      <label>Data/hora da transação:</label>
+    <tr>
+      <td><h2 class="title">{{ operation }}</h2></td>
+      <td>
+        <h3 class="title">Seu saldo atual é R${{ balance }}</h3>
+      </td>
+    </tr>
 
-      <input
-        type="datetime-local"
-        formControlName="date"
-        class="form-control date"
-      />
+    <div class="dateTime">
+      <tr>
+        <td><label for="amount">Valor:</label></td>
+        <td>
+          <input  type="number" class="form-control amount" formControlName="amount" placeholder="0,00" required/>
+        </td>
+      </tr>
+    </div>
+
+    <div class="dateTime">
+      <tr>
+        <td><label for="date">Data da transação:</label></td>
+        <td><input type="date" formControlName="date" class="form-control date" required/></td>
+      </tr>
+    </div>
+
+    <div *ngIf="operation == 'Transferência'">
+      <tr>
+        <td><label for="date">Dados da conta de destino:</label></td>
+      </tr>
+      <tr>
+        <td>Banco</td>
+        <td>Ag.</td>
+        <td>Dg.</td>
+        <td>Conta</td>
+        <td>Dg.</td>
+      </tr>
+      <tr>
+        <td><input style="width: 60px;text-align: center;" type="text"
+            class="form-control" placeholder="000" formControlName="banco" /></td>
+        <td><input style="width: 70px;text-align: center;" type="text"
+            class="form-control" placeholder="0000"  formControlName="ag" /></td>
+        <td><input style="width: 40px;text-align: center;" type="text"
+            class="form-control" placeholder="0"  formControlName="agdg" /></td>
+        <td><input style="width: 100px;text-align: center;" type="text"
+            class="form-control" placeholder="00000000"  formControlName="conta" />
+        </td>
+        <td><input style="width: 40px;text-align: center;" type="text"
+            class="form-control" placeholder="0"  formControlName="contadg" ></td>
+      </tr>
+    </div>
+
+    <div *ngIf="operation == 'PIX'">
+      <tr>
+        <td>Chave Pix</td>
+      </tr>
+      <tr>
+        <td><input style="text-align: center;" type="text" class="form-control"  formControlName="pix" /></td>
+      </tr>
+      <tr>
+        <td>
+        <input type="radio" id="email" name="opcao" value="email">
+        <label for="email">E-mail</label><br>
+        </td>
+        <td>
+        <input type="radio" id="telefone" name="opcao" value="telefone">
+        <label for="telefone">Telefone</label><br>
+        </td>
+        <td>
+        <input type="radio" id="cpfCnpj" name="opcao" value="cpfCnpj">
+        <label for="cpfCnpj">Cpf/Cnpj</label>
+        </td>
+      </tr>
     </div>
 
     <div class="division">

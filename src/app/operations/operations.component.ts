@@ -18,8 +18,6 @@ export class OperationsComponent implements OnInit {
 
   Op(op: string) {
     this.operation = op;
-    console.log(this.operation)
-
   }
     // this.service.showConfirm('Saque', Id, 'Agendamento de Saque', `Confirma o Agendamento de saque no valor de ${Id} para 00/00/0000 as 00:00hs ?`)
 

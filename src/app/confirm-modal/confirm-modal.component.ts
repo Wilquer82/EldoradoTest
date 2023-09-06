@@ -25,16 +25,16 @@ export class ConfirmModalComponent implements OnInit {
     this.BsModalRef.hide();
   }
   onConfirm() {
-    if (this.Type = 'Device') {
-      this.service.deleteDevice(this.Id).subscribe((res) => {
-      })
-      this.BsModalRef.hide();
-    }
-    if (this.Type = 'Category') {
-      this.service.deleteCategory(this.Id).subscribe((res) => {
-      })
-      this.BsModalRef.hide();
-    }
+  //   if (this.Type = 'Device') {
+  //     this.service.deleteDevice(this.Id).subscribe((res) => {
+  //     })
+  //     this.BsModalRef.hide();
+  //   }
+  //   if (this.Type = 'Category') {
+  //     this.service.deleteCategory(this.Id).subscribe((res) => {
+  //     })
+  //     this.BsModalRef.hide();
+  //   }
   }
 
 }

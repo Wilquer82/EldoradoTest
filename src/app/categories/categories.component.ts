@@ -22,23 +22,7 @@ export class Categories implements OnInit {
   addCategory: boolean = false;
 
 
-  Table() {
-    this.service.getAl1Categories().subscribe((res) => {
-      this.Categories = res;
-    })
-    this.ShowTable = true;
-    this.addCategory = false;
-  }
 
-  deleteItem(Id: any) {
-    this.service.showConfirm('Category', Id, 'Confirmação de Exclusão', `Você confima a exclusão da Categoria Id ${Id} ?`)
-    this.ShowTable = false;
-  }
-
-  AddCategory() {
-    this.addCategory = true;
-    this.ShowTable = false;
-  }
 
   ngOnInit(): void { }
 
@@ -52,18 +36,9 @@ export class Categories implements OnInit {
 
   }
 
-  Submit(Category: any) {
-    if (this.NewCategory.valid){
-      this.service.Addcategory(Category.value).subscribe((res) => {
-      })
-      this.NewCategory.reset();
-      this.addCategory = false;
-    }
-    else {
-      alert("Campos em Branco! Corrija!")
-    }
 
-  }
+
+
 
 }
 

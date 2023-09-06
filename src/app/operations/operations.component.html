@@ -3,9 +3,8 @@
   <div class="container">
     <button class="opButtons" mat-raised-button (click)="Op('Saque'); ">Saque</button>
     <button class="opButtons" mat-raised-button (click)="Op('Deposito');">Depósito</button>
-    <button class="opButtons" mat-raised-button (click)="Op('Tranferencia');">Transferência</button>
+    <button class="opButtons" mat-raised-button (click)="Op('Transferência');">Transferência</button>
     <button class="opButtons" mat-raised-button (click)="Op('PIX');">PIX</button>
-    <button class="opButtons" mat-raised-button (click)="Op('Pag');">Pagamentos</button>
   </div>
 </div>
 <app-all-operations *ngIf="operation.length>1" [operation]="(operation)"></app-all-operations>

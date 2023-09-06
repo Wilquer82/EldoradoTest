@@ -11,36 +11,51 @@ import { Location } from '@angular/common';
 export class AllOperationsComponent implements OnInit {
 
   @Input() operation: any;
-  @Input() amount: number = 0;
+  @Input() amount: any;
   @Input() date: string = '';
   @Input() cancelB = 'Cancelar';
   @Input() confirmB = 'Confirmar';
+
+  balance: number = 0;
+  user: any;
+
 
   Operation = new FormGroup({
     'operation': new FormControl('', Validators.required),
     'amount': new FormControl('', Validators.required),
     'date': new FormControl('', Validators.required),
+    'banco': new FormControl('', [Validators.required, Validators.pattern(/^\d+$/), Validators.maxLength(3)]),
+    'ag': new FormControl('', [Validators.required, Validators.pattern(/^\d+$/), Validators.maxLength(4)]),
+    'agdg': new FormControl('', [Validators.required, Validators.pattern(/^\d+$/), Validators.maxLength(1)]),
+    'conta': new FormControl('', [Validators.required, Validators.pattern(/^\d+$/), Validators.maxLength(8)]),
+    'contadg': new FormControl('', [Validators.required, Validators.pattern(/^\d+$/), Validators.maxLength(1)]),
+    'pix': new FormControl('', [Validators.required]),
+    'opção': new FormControl('', [Validators.required]),
   });
 
-  constructor(private location: Location) {}
+  constructor(private location: Location,
+              private service: ApiserviceService,
+) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.user = localStorage.getItem('user');
+    this.service.getBalance(this.user).subscribe((res) => {
+      this.balance = res.balance;
+    });
+  }
 
-goBack() {
-  this.location.back();
-}
+  goBack() {
+    this.location.back();
+  }
 
-Submit(operation: any) {
-    //   if (this.Device.valid){
-    //     this.service.AddDevice(Device.value).subscribe((res) => {
-    //     })
 
-    //     this.Device.reset();
-    //     this.AddDevice = false;
-    // }
-    // else {
-    //   alert("Campos em Branco ou Incorretos! Corrija!")
-    // }
+  Submit(Operation: any) {
+    console.log(this.amount, this.balance);
+    if(this.amount > this.balance) {
+      alert("Operação não pode ser realizada, saldo Insuficiente!")
+      return
+    }
+    Operation.operation = this.operation;
 }
 
 

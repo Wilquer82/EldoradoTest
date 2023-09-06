@@ -14,31 +14,32 @@ export class ApiserviceService {
     private modalService: BsModalService,
   ) { }
 
-  // apiUrl = 'http://localhost:3001';
+  apiUrl = 'http://localhost:3001';
 
-  apiUrl = "https://ec2-44-210-0-1.compute-1.amazonaws.com:3001"
+  // apiUrl = "https://ec2-44-210-0-1.compute-1.amazonaws.com:3001"
 
-  AddDevice(Device: any) {
-    return this._http.post(`${this.apiUrl + "/addDevice"}`, Device);
+  AddUser(User: any) {
+    console.log("service", User)
+    return this._http.post(`${this.apiUrl + "/user"}`, User);
   }
 
-  Addcategory(Category: any) {
-    return this._http.post(`${this.apiUrl + "/addCategory"}`, Category);
+  Login(data: any) {
+        return this._http.post(`${this.apiUrl + "/login"}`, data);
   }
 
-  getAl1Categories():Observable<any>{
-    return this._http.get(`${this.apiUrl+"/categories"}`);
+  getBalance(user: string):Observable<any>{
+    return this._http.get(`${this.apiUrl+"/balance/"+user}`);
   }
 
-  getDevicesWithCategories(id: number): Observable<any>{
+  putBalance(id: number): Observable<any>{
     return this._http.get(`${this.apiUrl+"/"+id}`);
   }
 
-  deleteDevice(id: number): Observable<any>{
+  getMoviments(id: number): Observable<any>{
     return this._http.delete(`${this.apiUrl + "/delDevice/" + id}`)
   };
 
-  deleteCategory(id: number): Observable<any>{
+  getCartMov(id: number): Observable<any>{
     return this._http.delete(`${this.apiUrl + "/delCategory/" + id}`)
   };
 
