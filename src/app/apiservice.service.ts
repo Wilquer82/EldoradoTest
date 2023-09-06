@@ -19,7 +19,6 @@ export class ApiserviceService {
   apiUrl = "https://tech-forb-back-ippqjwygb-wilquer82.vercel.app";
 
   AddUser(User: any) {
-    console.log("service", User)
     return this._http.post(`${this.apiUrl + "/user"}`, User);
   }
 
