@@ -4,4 +4,4 @@
 
 *Banco de dados MongoDb
 
-*Server Back-End em Node.js + Angular
+*Server Back-End em Node.js
