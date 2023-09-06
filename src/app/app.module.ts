@@ -18,7 +18,6 @@ import { OperationsComponent } from './operations/operations.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { AllOperationsComponent } from './all-operations/all-operations.component';
-import { TextMaskModule } from 'angular2-text-mask';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
@@ -38,7 +37,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatFormFieldModule,
     FormsModule,
     BrowserModule,
-    TextMaskModule,
     ReactiveFormsModule,
     HttpClientModule,
     MatButtonModule,

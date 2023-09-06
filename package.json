@@ -26,7 +26,6 @@
     "@types/jquery": "^3.5.18",
     "@types/popper.js": "^1.11.0",
     "@types/zone.js": "^0.5.12",
-    "angular2-text-mask": "^9.0.0",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^4.6.2",
     "chart.js": "^4.4.0",
